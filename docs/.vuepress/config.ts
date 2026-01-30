@@ -5,7 +5,7 @@ export default defineConfig({
         sidebar: "auto",
         sidebarDepth: 5
     },
-    dest: "../dist",
+    dest: "./dist",
     locales: {
         "/": {
             lang: "zh-CN",
