@@ -19,5 +19,6 @@
         "dev": "vuepress dev docs",
         "build": "vuepress build docs",
         "lint": "eslint ."
-    }
+    },
+    "license": "MIT"
 }

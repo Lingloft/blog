@@ -19,7 +19,7 @@ function openWebsite() {
         <div class="info">
             <span class="name">
                 {{ peopleData.name }}
-                <LabelBlock v-for="label in peopleData.labels">{{ label }}</LabelBlock>
+                <LabelBlock v-for="label in peopleData.labels" :key="label">{{ label }}</LabelBlock>
             </span>
             <span class="description">{{ peopleData.description }}</span>
         </div>

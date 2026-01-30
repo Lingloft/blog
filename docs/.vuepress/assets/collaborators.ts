@@ -1,7 +1,7 @@
 import { PeopleDescriptor } from "../components/structs";
 
-const peoples = ["fallingshrimp"] as const;
-const store: PeopleStore = {
+export const peoples = ["fallingshrimp"] as const;
+export const store: PeopleStore = {
     fallingshrimp: {
         avatar: "https://fshrimp.top/avatars/lycaon.jpg",
         name: "陨落基围虾",
