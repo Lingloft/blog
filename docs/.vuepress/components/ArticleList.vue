@@ -1,7 +1,8 @@
 <template>
     <div class="wrapper">
-        <a v-for="article in articles" :key="article.title" :href="article.url">{{ article.title
-        }}</a>
+        <a v-for="article in articles" :key="article.title" :href="article.url">
+            {{ article.title }}
+        </a>
     </div>
 </template>
 <script setup lang="ts">
