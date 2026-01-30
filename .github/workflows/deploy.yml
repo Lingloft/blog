@@ -38,4 +38,4 @@ jobs:
           ssh -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "rm -rf ${{ secrets.SERVER_DEPLOY_PATH }}/*"
 
           # 上传构建产物到服务器
-          scp -r -i ~/.ssh/id_rsa ./docs/.vuepress/dist/* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.SERVER_DEPLOY_PATH }}/
+          scp -r -i ~/.ssh/id_rsa ./dist/* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.SERVER_DEPLOY_PATH }}/
