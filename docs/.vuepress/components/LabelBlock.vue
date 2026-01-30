@@ -8,8 +8,9 @@ span {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 2px 5px;
-    font-size: 0.9em;
+    font-size: 15px;
     margin: 2px;
     display: inline-block;
+    font-weight: normal;
 }
 </style>

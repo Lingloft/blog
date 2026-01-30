@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import store, { Peoples } from "../assets/collaborators";
+import LabelBlock from "./LabelBlock.vue";
 
 const props = defineProps<{
     people: Peoples;
@@ -16,7 +17,10 @@ function openWebsite() {
     <div class="friend-link" @click="openWebsite">
         <img v-if="avatarLink" :src="avatarLink" class="avatar">
         <div class="info">
-            <span class="name">{{ peopleData.name }}</span>
+            <span class="name">
+                {{ peopleData.name }}
+                <LabelBlock v-for="label in peopleData.labels">{{ label }}</LabelBlock>
+            </span>
             <span class="description">{{ peopleData.description }}</span>
         </div>
     </div>
