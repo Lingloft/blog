@@ -18,5 +18,24 @@ export default defineConfig({
     },
     head: [
         ["link", { rel: "shortcut icon", type: "image/png", href: "/favicon.png" }]
-    ]
+    ],
+    configureWebpack: {
+        module: {
+            rules: [
+                {
+                    test: /\.ts$/,
+                    use: {
+                        loader: "ts-loader",
+                        options: {
+                            appendTsSuffixTo: [/\.vue$/],
+                            transpileOnly: true,
+                        }
+                    }
+                }
+            ]
+        },
+        resolve: {
+            extensions: [".ts", ".js"],
+        }
+    }
 });

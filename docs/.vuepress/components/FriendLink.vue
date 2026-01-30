@@ -1,22 +1,23 @@
 <script setup lang="ts">
-import { PeopleDescriptor } from "./structs";
 import { computed } from "vue";
+import store, { Peoples } from "../assets/collaborators";
 
 const props = defineProps<{
-    people: PeopleDescriptor;
+    people: Peoples;
 }>();
-const avatarLink = computed(() => props.people.avatar || props.people.name);
+const peopleData = computed(() => store[props.people]);
+const avatarLink = computed(() => peopleData.value.avatar || peopleData.value.name);
 
 function openWebsite() {
-    if (props.people.website) window.open(props.people.website);
+    if (peopleData.value.website) window.open(peopleData.value.website);
 }
 </script>
 <template>
     <div class="friend-link" @click="openWebsite">
-        <img v-if="avatarLink" :src="`friends/${avatarLink}.jpg`" class="avatar">
+        <img v-if="avatarLink" :src="avatarLink" class="avatar">
         <div class="info">
-            <span class="name">{{ people.name }}</span>
-            <span class="description">{{ people.description }}</span>
+            <span class="name">{{ peopleData.name }}</span>
+            <span class="description">{{ peopleData.description }}</span>
         </div>
     </div>
 </template>
@@ -24,16 +25,17 @@ function openWebsite() {
 .friend-link {
     --s: 75px;
     display: inline-flex;
-    border: transparent 2px solid;
+    border: rgb(200, 200, 200) 2px solid;
     border-radius: var(--s);
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 20px;
     backdrop-filter: blur(10px);
+    transition: all .2s ease-out;
 }
 
 .friend-link:hover {
-    border-color: white;
+    border-color: black;
     transform: scale(110%) translateY(-5px);
     backdrop-filter: blur(20px);
 }
@@ -54,13 +56,12 @@ function openWebsite() {
 }
 
 .name {
-    color: white;
     font-weight: bold;
     font-size: 18px;
 }
 
 .description {
-    color: rgb(225, 225, 225);
+    color: rgb(25, 25, 25);
     font-size: 14px;
 }
 </style>
