@@ -1,7 +1,7 @@
 import { PeopleDescriptor } from "../components/structs";
 
-const peoples = ["Kernyr", "fallingshrimp"] as const;
-const store: PeopleStore = {
+export const peoples = ["Kernyr", "fallingshrimp"] as const;
+export const store: PeopleStore = {
     Kernyr: {
         avatar: "https://hujiarong.site/assets/avatar.jpg",
         name: "主核Kernyr",
