@@ -12,12 +12,12 @@ export const articles: ArticleData[] = context.keys().map(key => {
     return {
         title,
         author,
-        url: `/articles/${filename}`
+        url: `/articles/${filename}.html`
     };
 });
 export const authorUrls: AuthorUrl = articles.map(article => (
     article.title === "readme"
-        ? { [article.author]: `/articles/${article.author}` }
+        ? { [article.author]: `/articles/${article.author}/readme.html` }
         : {}
 )).reduce((acc, cur) => ({ ...acc, ...cur }), {} as AuthorUrl) || {};
 export default articles;
