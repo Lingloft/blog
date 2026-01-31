@@ -33,15 +33,13 @@ function openWebsite() {
     border-radius: var(--s);
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.1);
-    margin: 20px;
-    backdrop-filter: blur(10px);
+    margin: 10px;
     transition: all .2s ease-out;
 }
 
 .friend-link:hover {
     border-color: black;
     transform: scale(110%) translateY(-5px);
-    backdrop-filter: blur(20px);
 }
 
 .avatar {

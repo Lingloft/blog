@@ -1,6 +1,7 @@
 export interface ArticleData {
     title: string;
     url: string;
+    author: string;
 }
 
 const context = require.context("../../articles", true, /\.md$/);
