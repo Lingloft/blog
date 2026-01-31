@@ -4,7 +4,7 @@
             <div class="article" v-if="article.title.toLowerCase() !== 'readme'" :key="article.title"
                 @click="openInNewTab(article.url)">
                 <a :href="article.url">{{ article.title }}</a>
-                <LabelBlock class="author" :href="article.authorUrl">
+                <LabelBlock class="author">
                     {{ findCollaborator(article.author)?.name || `未知作者：${article.author}` }}
                 </LabelBlock>
             </div>
