@@ -1,11 +1,13 @@
 <template>
     <div class="articles">
-        <div v-for="article in articles" :key="article.title" class="article">
-            <a :href="article.url">{{ article.title }}</a>
-            <LabelBlock class="author">
-                {{ findCollaborator(article.author)?.name || `未知作者：${article.author}` }}
-            </LabelBlock>
-        </div>
+        <template v-for="article in articles">
+            <div class="article" v-if="article.title.toLowerCase() !== 'readme'" :key="article.title">
+                <a :href="article.url">{{ article.title }}</a>
+                <LabelBlock class="author" :href="article.authorUrl">
+                    {{ findCollaborator(article.author)?.name || `未知作者：${article.author}` }}
+                </LabelBlock>
+            </div>
+        </template>
     </div>
 </template>
 <script setup lang="ts">

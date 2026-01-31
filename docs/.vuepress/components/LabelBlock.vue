@@ -1,10 +1,18 @@
 <template>
-    <span>
-        <slot></slot>
+    <span class="block">
+        <a v-if="href" :href="href" target="_blank">
+            <slot></slot>
+        </a>
+        <slot v-else></slot>
     </span>
 </template>
+<script setup lang="ts">
+defineProps < {
+    href?: string;
+} > ();
+</script>
 <style scoped>
-span {
+.block {
     background-color: rgb(240, 240, 240);
     border-radius: 5px;
     padding: 2px 5px;
