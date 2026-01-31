@@ -13,7 +13,7 @@ const articles: ArticleData[] = context.keys().map(key => {
         title,
         author,
         url: `/articles/${filename}`,
-        authorUrl: `/articles/${author}/readme`,
+        authorUrl: `/articles/${author}`,
     };
 });
 export default articles;
