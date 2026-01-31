@@ -12,7 +12,8 @@
             "node",
             "vue",
             "webpack-env"
-        ]
+        ],
+        "baseUrl": "."
     },
     "include": [
         "**/*"
