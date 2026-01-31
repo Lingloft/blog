@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import store, { Peoples } from "../assets/collaborators";
 import LabelBlock from "./LabelBlock.vue";
+import { openInNewTab } from "../utils/index";
 
 const props = defineProps<{
     people: Peoples;
@@ -10,7 +11,7 @@ const peopleData = computed(() => store[props.people]);
 const avatarLink = computed(() => peopleData.value.avatar || peopleData.value.name);
 
 function openWebsite() {
-    if (peopleData.value.website) window.open(peopleData.value.website);
+    if (peopleData.value.website) openInNewTab(peopleData.value.website);
 }
 </script>
 <template>
