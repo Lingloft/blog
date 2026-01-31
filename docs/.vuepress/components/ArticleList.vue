@@ -12,7 +12,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import articles from "../assets/articles";
+import articles, { authorUrls } from "../assets/articles";
 import { findCollaborator } from "../assets/collaborators";
 import { openInNewTab } from "../utils";
 import LabelBlock from "./LabelBlock.vue";

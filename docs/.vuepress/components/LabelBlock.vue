@@ -7,9 +7,9 @@
     </span>
 </template>
 <script setup lang="ts">
-defineProps < {
-    href?: string;
-} > ();
+defineProps<{
+    href?: string | null;
+}>();
 </script>
 <style scoped>
 .block {
