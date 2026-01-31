@@ -5,10 +5,12 @@ export interface ArticleData {
 
 const context = require.context("../../articles", true, /\.md$/);
 const articles: ArticleData[] = context.keys().map(key => {
-    const title = key.replace("./", "").replace(/\.md$/, "");
+    const filename = key.replace("./", "").replace(/\.md$/, "");
+    const [author, title] = filename.split("/");
     return {
-        title: title,
-        url: `/articles/${title}`
+        title,
+        author,
+        url: `/articles/${filename}`
     };
 });
 export default articles;
