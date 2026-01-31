@@ -41,6 +41,7 @@ function openWebsite() {
 .friend-link:hover {
     border-color: black;
     transform: scale(110%) translateY(-5px);
+    cursor: pointer;
 }
 
 .avatar {
