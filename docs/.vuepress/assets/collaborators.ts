@@ -13,10 +13,16 @@ export const store: PeopleStore = {
         avatar: "https://fshrimp.top/avatars/lycaon.jpg",
         name: "陨落基围虾",
         website: "https://fshrimp.top",
-        labels: ["开发", "文档"],
-        description: "好看的皮囊千篇一律，有趣的灵魂万里挑一。",
+        labels: ["全栈", "游戏"],
+        description: "好看的皮囊千篇一律，有趣的灵魂万里挑一",
     },
 };
+export function findCollaborator(name: string): PeopleDescriptor | null {
+    if (peoples.includes(name as Peoples)) {
+        return store[name as Peoples];
+    }
+    return null;
+}
 
 export type Peoples = (typeof peoples)[number];
 export type PeopleStore = Record<Peoples, PeopleDescriptor>;

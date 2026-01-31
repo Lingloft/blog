@@ -1,17 +1,31 @@
 <template>
-    <div class="wrapper">
-        <div v-for="article in articles" :key="article.title">
+    <div class="articles">
+        <div v-for="article in articles" :key="article.title" class="article">
             <a :href="article.url">{{ article.title }}</a>
-            <span class="author">by {{ article.author }}</span>
+            <LabelBlock class="author">
+                {{ findCollaborator(article.author)?.name || `未知作者：${article.author}` }}
+            </LabelBlock>
         </div>
     </div>
 </template>
 <script setup lang="ts">
 import articles from "../assets/articles";
+import { findCollaborator } from "../assets/collaborators";
+import LabelBlock from "./LabelBlock.vue";
 </script>
 <style scoped>
-.wrapper {
+.articles {
     display: flex;
     flex-direction: column;
+    gap: 5px;
+}
+
+.article {
+    display: flex;
+    align-items: center;
+}
+
+.author {
+    margin-left: auto;
 }
 </style>
